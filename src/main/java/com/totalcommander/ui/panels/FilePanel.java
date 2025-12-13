@@ -51,20 +51,20 @@ public class FilePanel extends VBox {
 
     public FilePanel(Consumer<FilePanel> onActivate) {
         try {
-            this.onActivate = onActivate;
-            this.fileOperationService = new FileOperationService();
-            this.archiveService = new ArchiveService();
-            this.fileItems = FXCollections.observableArrayList();
+        this.onActivate = onActivate;
+        this.fileOperationService = new FileOperationService();
+        this.archiveService = new ArchiveService();
+        this.fileItems = FXCollections.observableArrayList();
             
             // Prova a caricare la directory home, altrimenti usa la directory corrente
             try {
-                this.currentPath = Paths.get(System.getProperty("user.home"));
+        this.currentPath = Paths.get(System.getProperty("user.home"));
             } catch (Exception e) {
                 this.currentPath = Paths.get(".");
             }
-            
-            initializeUI();
-            loadDirectory(currentPath);
+        
+        initializeUI();
+        loadDirectory(currentPath);
         } catch (Exception e) {
             System.err.println("Errore nell'inizializzazione di FilePanel: " + e.getMessage());
             e.printStackTrace();
@@ -101,7 +101,7 @@ public class FilePanel extends VBox {
                 }
             }
         });
-        
+
         // Barra percorso
         HBox pathBar = new HBox(5);
         pathField = new TextField();
@@ -603,11 +603,11 @@ public class FilePanel extends VBox {
         if (isFtpMode) {
             navigateToFtpPath(pathString);
         } else {
-            try {
-                Path path = Paths.get(pathString);
-                loadDirectory(path);
-            } catch (Exception e) {
-                showError("Errore", "Percorso non valido: " + e.getMessage());
+        try {
+            Path path = Paths.get(pathString);
+            loadDirectory(path);
+        } catch (Exception e) {
+            showError("Errore", "Percorso non valido: " + e.getMessage());
             }
         }
     }
@@ -814,7 +814,7 @@ public class FilePanel extends VBox {
             for (Integer index : selectedIndices) {
                 if (index >= 0 && index < fileItems.size()) {
                     FileItem item = fileItems.get(index);
-                    if (!item.getName().equals("..")) {
+            if (!item.getName().equals("..")) {
                         File file = currentPath.resolve(item.getName()).toFile();
                         if (file.exists()) {
                             files.add(file);

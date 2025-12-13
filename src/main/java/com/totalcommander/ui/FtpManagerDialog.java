@@ -94,7 +94,7 @@ public class FtpManagerDialog extends Dialog<Void> {
                 if (onConnectCallback != null) {
                     onConnectCallback.accept(selected);
                 } else {
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Connessione Riuscita");
                     alert.setHeaderText("Connesso a: " + selected.getName());
                     alert.setContentText("La connessione FTP è attiva.\nHost: " + selected.getHost() + 

@@ -269,8 +269,8 @@ public class MainWindow extends BorderPane {
             activePanel.setActive(false);
         }
         if (panel != null) {
-            activePanel = panel;
-            activePanel.setActive(true);
+        activePanel = panel;
+        activePanel.setActive(true);
             // Assicura che il pannello riceva il focus
             activePanel.requestFocus();
         }
@@ -305,7 +305,7 @@ public class MainWindow extends BorderPane {
         } else {
             // Copia locale normale
             if (fileOperationService.copyFiles(selectedFiles, targetPanel.getCurrentPath())) {
-                targetPanel.refresh();
+        targetPanel.refresh();
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Errore");
@@ -325,12 +325,12 @@ public class MainWindow extends BorderPane {
             moveFtpFiles(sourcePanel, targetPanel);
         } else {
             // Sposta locale normale
-            fileOperationService.moveFiles(
-                sourcePanel.getSelectedFiles(),
-                targetPanel.getCurrentPath()
-            );
-            sourcePanel.refresh();
-            targetPanel.refresh();
+        fileOperationService.moveFiles(
+            sourcePanel.getSelectedFiles(),
+            targetPanel.getCurrentPath()
+        );
+        sourcePanel.refresh();
+        targetPanel.refresh();
         }
     }
     
@@ -351,50 +351,39 @@ public class MainWindow extends BorderPane {
             showTransferManager();
         }
         
+        // Configura callback per aggiornare le cartelle quando i trasferimenti sono completati
+        transferService.setOnAllTransfersComplete(() -> {
+            // Aggiorna la cartella di destinazione
+            if (sourcePanel.isFtpMode()) {
+                // Download: aggiorna il pannello locale di destinazione
+                targetPanel.refresh();
+            } else {
+                // Upload: aggiorna il pannello FTP di destinazione
+                if (targetPanel.isFtpMode()) {
+                    targetPanel.refresh();
+                }
+            }
+        });
+        
         if (sourcePanel.isFtpMode()) {
             // Download da FTP a locale
             com.totalcommander.services.FtpService ftpService = sourcePanel.getFtpService();
             List<String> ftpPaths = sourcePanel.getSelectedFtpPaths();
+            java.io.File localDestinationDir = targetPanel.getCurrentPath().toFile();
             
-            appendFtpStatus("Inizio download di " + ftpPaths.size() + " file...");
+            appendFtpStatus("Aggiunti " + ftpPaths.size() + " elementi alla coda di download...");
             
-            for (String remoteFilePath : ftpPaths) {
-                String fileName = new java.io.File(remoteFilePath).getName();
-                java.io.File localFile = targetPanel.getCurrentPath().resolve(fileName).toFile();
-                
-                transferService.downloadFile(remoteFilePath, localFile, ftpService, task -> {
-                    if (task.isCompleted()) {
-                        appendFtpStatus("Download completato: " + task.getFileName());
-                        targetPanel.refresh();
-                        // Aggiorna anche il pannello FTP se è quello sorgente
-                        if (sourcePanel.isFtpMode()) {
-                            sourcePanel.refresh();
-                        }
-                    } else if (task.isFailed()) {
-                        appendFtpStatus("Errore download: " + task.getFileName() + " - " + task.getErrorMessage());
-                    }
-                });
-            }
+            // Aggiungi tutti i file/cartelle alla coda
+            transferService.queueDownload(ftpPaths, localDestinationDir, ftpService);
         } else {
             // Upload da locale a FTP
             com.totalcommander.services.FtpService ftpService = targetPanel.getFtpService();
             String remotePath = targetPanel.getCurrentFtpPath();
             
-            appendFtpStatus("Inizio upload di " + selectedFiles.size() + " file...");
+            appendFtpStatus("Aggiunti " + selectedFiles.size() + " elementi alla coda di upload...");
             
-            for (java.io.File localFile : selectedFiles) {
-                transferService.uploadFile(localFile, remotePath, ftpService, task -> {
-                    if (task.isCompleted()) {
-                        appendFtpStatus("Upload completato: " + task.getFileName());
-                        // Aggiorna il pannello FTP per mostrare i nuovi file
-                        if (targetPanel.isFtpMode()) {
-                            targetPanel.refresh();
-                        }
-                    } else if (task.isFailed()) {
-                        appendFtpStatus("Errore upload: " + task.getFileName() + " - " + task.getErrorMessage());
-                    }
-                });
-            }
+            // Aggiungi tutti i file/cartelle alla coda
+            transferService.queueUpload(selectedFiles, remotePath, ftpService);
         }
     }
     
@@ -562,21 +551,13 @@ public class MainWindow extends BorderPane {
     }
     
     private void showDiskStructure() {
-        // TODO: Implementare visualizzazione struttura disco
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Struttura del Disco");
-        alert.setHeaderText("Funzionalità in sviluppo");
-        alert.setContentText("La visualizzazione della struttura del disco sarà disponibile a breve.");
-        alert.showAndWait();
+        DiskStructureDialog dialog = new DiskStructureDialog();
+        dialog.show();
     }
     
     private void showFindDialog() {
-        // TODO: Implementare dialog di ricerca file
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Trova");
-        alert.setHeaderText("Funzionalità in sviluppo");
-        alert.setContentText("La ricerca file sarà disponibile a breve.");
-        alert.showAndWait();
+        FindFilesDialog dialog = new FindFilesDialog();
+        dialog.show();
     }
     
     private void showFindInBackground() {
@@ -647,14 +628,17 @@ public class MainWindow extends BorderPane {
         try {
             String os = System.getProperty("os.name").toLowerCase();
             if (os.contains("win")) {
-                ProcessBuilder pb = new ProcessBuilder("powershell.exe");
-                pb.directory(activePanel.getCurrentPath().toFile());
+                // Usa start per aprire PowerShell in una nuova finestra
+                String currentDir = activePanel.getCurrentPath().toString();
+                ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/c", "start", "powershell.exe", 
+                    "-NoExit", "-Command", "cd '" + currentDir + "'");
                 pb.start();
             } else {
                 showError("Errore", "PowerShell è disponibile solo su Windows.");
             }
         } catch (Exception e) {
             showError("Errore", "Impossibile aprire PowerShell: " + e.getMessage());
+            e.printStackTrace();
         }
     }
     

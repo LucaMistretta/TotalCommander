@@ -1,5 +1,8 @@
 package com.totalcommander.services;
 
+import com.totalcommander.ui.FileViewerDialog;
+import com.totalcommander.ui.FileEditorDialog;
+import javafx.application.Platform;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -76,23 +79,51 @@ public class FileOperationService {
     }
 
     public void openFile(File file) {
-        try {
-            if (Desktop.isDesktopSupported()) {
-                Desktop.getDesktop().open(file);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (file == null || !file.exists() || file.isDirectory()) {
+            return;
         }
+        
+        // Usa il visualizzatore personalizzato
+        Platform.runLater(() -> {
+            try {
+                FileViewerDialog viewer = new FileViewerDialog(file);
+                viewer.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+                // Fallback: prova con Desktop
+                try {
+                    if (Desktop.isDesktopSupported()) {
+                        Desktop.getDesktop().open(file);
+                    }
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
     }
 
     public void editFile(File file) {
-        try {
-            if (Desktop.isDesktopSupported()) {
-                Desktop.getDesktop().edit(file);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (file == null || !file.exists() || file.isDirectory()) {
+            return;
         }
+        
+        // Usa l'editor personalizzato
+        Platform.runLater(() -> {
+            try {
+                FileEditorDialog editor = new FileEditorDialog(file);
+                editor.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+                // Fallback: prova con Desktop
+                try {
+                    if (Desktop.isDesktopSupported()) {
+                        Desktop.getDesktop().edit(file);
+                    }
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
     }
 
     private void copyDirectory(Path source, Path destination) throws IOException {

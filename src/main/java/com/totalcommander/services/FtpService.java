@@ -18,6 +18,9 @@ public class FtpService {
 
     public FtpService() {
         this.ftpClient = new FTPClient();
+        // Imposta timeout per evitare blocchi
+        this.ftpClient.setDefaultTimeout(30000); // 30 secondi
+        this.ftpClient.setConnectTimeout(10000); // 10 secondi per la connessione
     }
 
     public boolean connect(String host, int port, String username, String password) {
@@ -29,7 +32,7 @@ public class FtpService {
             ftpClient.connect(host, port);
             if (ftpClient.login(username, password)) {
                 if (usePassiveMode) {
-                    ftpClient.enterLocalPassiveMode();
+                ftpClient.enterLocalPassiveMode();
                 } else {
                     ftpClient.enterLocalActiveMode();
                 }
