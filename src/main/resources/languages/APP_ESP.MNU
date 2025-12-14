@@ -1,0 +1,122 @@
+# Archivo menú idioma Español
+# Formato: clave=valor
+
+# Menús principales
+menu.file=Archivo
+menu.edit=Editar
+menu.archive=Archivos
+menu.ftp=FTP
+menu.commands=Comandos
+menu.settings=Configuración
+
+# Menú Archivo
+menu.file.newfolder=Nueva Carpeta
+menu.file.delete=Eliminar
+menu.file.rename=Renombrar
+menu.file.multirename=Renombrar Múltiple
+
+# Menú Editar
+menu.edit.copy=Copiar
+menu.edit.move=Mover
+menu.edit.edit=Editar
+
+# Menú Archivos
+menu.archive.create=Crear Archivo
+menu.archive.extract=Extraer Archivo
+
+# Menú FTP
+menu.ftp.connect=Conectar FTP
+
+# Menú Comandos
+menu.commands.diskstructure=Estructura del Disco
+menu.commands.find=Buscar
+menu.commands.findbackground=Buscar en Proceso en Segundo Plano
+menu.commands.systeminfo=Información del Sistema
+menu.commands.terminal=Abrir Terminal
+menu.commands.powershell=PowerShell
+menu.commands.openwindow=Abrir Ventana
+menu.commands.desktop=Escritorio
+menu.commands.documents=Documentos
+menu.commands.downloads=Descargas
+menu.commands.transfermanager=Administrador de Transferencias en Segundo Plano
+
+# Menú Configuración
+menu.settings.settings=Configuración...
+
+# Botones barra de herramientas
+toolbar.refresh=Actualizar
+toolbar.copyfolders=Copiar carpetas
+toolbar.newfolder=Nueva carpeta
+toolbar.viewer=Ver
+toolbar.move=Mover
+toolbar.download=Descargar
+toolbar.settings=Configuración
+toolbar.back=Atrás
+toolbar.forward=Adelante
+toolbar.upload=Subir
+toolbar.ftp=FTP
+toolbar.url=URL
+toolbar.search=Buscar
+toolbar.edit=Editar
+toolbar.sync=Sincronizar carpetas
+toolbar.clipboard=Portapapeles
+toolbar.notepad=Bloc de notas
+toolbar.newemptyfolder=Nueva carpeta vacía
+toolbar.connectftp=Conectar FTP
+toolbar.connecturl=Conectar URL
+toolbar.network=Red
+
+# Botones principales
+button.view=Ver
+button.edit=Editar
+button.copy=Copiar
+button.move=Mover
+button.createfolder=Crear Carpeta
+button.delete=Eliminar
+button.exit=Salir
+
+# Mensajes
+message.nofileselected=Ningún archivo seleccionado
+message.selectfile=Seleccione al menos un archivo
+message.error=Error
+message.success=Éxito
+message.warning=Advertencia
+message.info=Información
+
+# Diálogo
+dialog.settings.title=Configuración
+dialog.settings.language=Idioma de la interfaz de usuario
+dialog.settings.menufile=Nombre del archivo menú:
+dialog.settings.edit=Editar
+dialog.settings.download=Descargar
+dialog.settings.ok=OK
+dialog.settings.cancel=Cancelar
+dialog.settings.apply=Aplicar
+dialog.settings.help=?
+
+# Categorías configuración
+settings.language=Idioma (Language)
+settings.layout=Diseño (Layout)
+settings.display=Visualización (Display)
+settings.icons=Iconos (Icons)
+settings.font=Fuente
+settings.colors=Colores (Colors)
+settings.tabs=Pestañas/formatos de datos (Tabs/data formats)
+settings.tabs2=Pestañas (Tabs)
+settings.customcolumns=Columnas personalizadas (Custom columns)
+settings.viewmode=Modo visualización (View mode)
+settings.autoswitch=Modo auto switch (Auto switch mode)
+settings.operations=Operaciones (Operations)
+settings.viewereditor=Visor/Editor (Viewer/Editor)
+settings.copydelete=Copiar/eliminar (Copy/delete)
+settings.update=Actualización (Update)
+settings.quicksearch=Búsqueda rápida (Quick search)
+settings.ftp=FTP
+settings.plugin=Plugin
+settings.thumbnails=Miniaturas (Thumbnails)
+settings.operationlog=Registro de operaciones (Operation log)
+settings.ignorelist=Lista de ignorar (Ignore list)
+settings.compression=Programas de compresión (Compression programs)
+settings.zipcompression=Compresión ZIP (ZIP compression)
+settings.miscellaneous=Varios (Miscellaneous)
+

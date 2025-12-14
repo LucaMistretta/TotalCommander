@@ -1,0 +1,122 @@
+# File menu lingua Italiano
+# Formato: chiave=valore
+
+# Menu principali
+menu.file=File
+menu.edit=Modifica
+menu.archive=Archivi
+menu.ftp=FTP
+menu.commands=Comandi
+menu.settings=Impostazioni
+
+# Menu File
+menu.file.newfolder=Nuova Cartella
+menu.file.delete=Elimina
+menu.file.rename=Rinomina
+menu.file.multirename=Rinomina Multipla
+
+# Menu Modifica
+menu.edit.copy=Copia
+menu.edit.move=Sposta
+menu.edit.edit=Modifica
+
+# Menu Archivi
+menu.archive.create=Crea Archivio
+menu.archive.extract=Estrai Archivio
+
+# Menu FTP
+menu.ftp.connect=Connetti FTP
+
+# Menu Comandi
+menu.commands.diskstructure=Struttura del Disco
+menu.commands.find=Trova
+menu.commands.findbackground=Trova in Processo Sparato
+menu.commands.systeminfo=Informazioni Sistema
+menu.commands.terminal=Apri Terminal
+menu.commands.powershell=PowerShell
+menu.commands.openwindow=Apri Finestra
+menu.commands.desktop=Desktop
+menu.commands.documents=Documenti
+menu.commands.downloads=Download
+menu.commands.transfermanager=Gestore Trasferimenti in Background
+
+# Menu Impostazioni
+menu.settings.settings=Impostazioni...
+
+# Bottoni toolbar
+toolbar.refresh=Aggiorna
+toolbar.copyfolders=Copia cartelle
+toolbar.newfolder=Nuova cartella
+toolbar.viewer=Visualizza
+toolbar.move=Sposta
+toolbar.download=Download
+toolbar.settings=Impostazioni
+toolbar.back=Indietro
+toolbar.forward=Avanti
+toolbar.upload=Upload
+toolbar.ftp=FTP
+toolbar.url=URL
+toolbar.search=Trova
+toolbar.edit=Modifica
+toolbar.sync=Sincronizza cartelle
+toolbar.clipboard=Clipboard
+toolbar.notepad=Notepad
+toolbar.newemptyfolder=Nuova cartella vuota
+toolbar.connectftp=Connetti FTP
+toolbar.connecturl=Connetti URL
+toolbar.network=Rete
+
+# Bottoni principali
+button.view=Visualizza
+button.edit=Modifica
+button.copy=Copia
+button.move=Sposta
+button.createfolder=Crea Cartella
+button.delete=Elimina
+button.exit=Esci
+
+# Messaggi
+message.nofileselected=Nessun file selezionato
+message.selectfile=Seleziona almeno un file
+message.error=Errore
+message.success=Successo
+message.warning=Attenzione
+message.info=Informazione
+
+# Dialog
+dialog.settings.title=Impostazioni
+dialog.settings.language=Lingua interfaccia utente
+dialog.settings.menufile=Nome file menu:
+dialog.settings.edit=Modifica
+dialog.settings.download=Download
+dialog.settings.ok=OK
+dialog.settings.cancel=Annulla
+dialog.settings.apply=Applica
+dialog.settings.help=?
+
+# Categorie impostazioni
+settings.language=Lingua (Language)
+settings.layout=Disposizione (Layout)
+settings.display=Visualizzazione (Display)
+settings.icons=Icone (Icons)
+settings.font=Font
+settings.colors=Colori (Colors)
+settings.tabs=Tabulazioni/formati dati (Tabs/data formats)
+settings.tabs2=Schede (Tabs)
+settings.customcolumns=Colonne personalizzate (Custom columns)
+settings.viewmode=Modo visualizzazione (View mode)
+settings.autoswitch=Modo auto switch (Auto switch mode)
+settings.operations=Operazioni (Operations)
+settings.viewereditor=Visualizzatore/Editor (Viewer/Editor)
+settings.copydelete=Copia/cancellazione (Copy/delete)
+settings.update=Aggiornamento (Update)
+settings.quicksearch=Ricerca veloce (Quick search)
+settings.ftp=FTP
+settings.plugin=Plugin
+settings.thumbnails=Anteprime (Thumbnails)
+settings.operationlog=Registro operazioni (Operation log)
+settings.ignorelist=Ignora elenco (Ignore list)
+settings.compression=Programmi compressione (Compression programs)
+settings.zipcompression=Compressione ZIP (ZIP compression)
+settings.miscellaneous=Varie (Miscellaneous)
+

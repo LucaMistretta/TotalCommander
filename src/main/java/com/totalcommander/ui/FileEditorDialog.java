@@ -238,3 +238,5 @@ public class FileEditorDialog extends Stage {
     }
 }
 
+
+

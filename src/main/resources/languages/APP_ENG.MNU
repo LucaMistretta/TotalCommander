@@ -1,0 +1,122 @@
+# Language menu file English
+# Format: key=value
+
+# Main menus
+menu.file=File
+menu.edit=Edit
+menu.archive=Archives
+menu.ftp=FTP
+menu.commands=Commands
+menu.settings=Settings
+
+# File Menu
+menu.file.newfolder=New Folder
+menu.file.delete=Delete
+menu.file.rename=Rename
+menu.file.multirename=Multi Rename
+
+# Edit Menu
+menu.edit.copy=Copy
+menu.edit.move=Move
+menu.edit.edit=Edit
+
+# Archives Menu
+menu.archive.create=Create Archive
+menu.archive.extract=Extract Archive
+
+# FTP Menu
+menu.ftp.connect=Connect FTP
+
+# Commands Menu
+menu.commands.diskstructure=Disk Structure
+menu.commands.find=Find
+menu.commands.findbackground=Find in Background Process
+menu.commands.systeminfo=System Information
+menu.commands.terminal=Open Terminal
+menu.commands.powershell=PowerShell
+menu.commands.openwindow=Open Window
+menu.commands.desktop=Desktop
+menu.commands.documents=Documents
+menu.commands.downloads=Downloads
+menu.commands.transfermanager=Background Transfer Manager
+
+# Settings Menu
+menu.settings.settings=Settings...
+
+# Toolbar buttons
+toolbar.refresh=Refresh
+toolbar.copyfolders=Copy folders
+toolbar.newfolder=New folder
+toolbar.viewer=View
+toolbar.move=Move
+toolbar.download=Download
+toolbar.settings=Settings
+toolbar.back=Back
+toolbar.forward=Forward
+toolbar.upload=Upload
+toolbar.ftp=FTP
+toolbar.url=URL
+toolbar.search=Search
+toolbar.edit=Edit
+toolbar.sync=Synchronize folders
+toolbar.clipboard=Clipboard
+toolbar.notepad=Notepad
+toolbar.newemptyfolder=New empty folder
+toolbar.connectftp=Connect FTP
+toolbar.connecturl=Connect URL
+toolbar.network=Network
+
+# Main buttons
+button.view=View
+button.edit=Edit
+button.copy=Copy
+button.move=Move
+button.createfolder=Create Folder
+button.delete=Delete
+button.exit=Exit
+
+# Messages
+message.nofileselected=No file selected
+message.selectfile=Select at least one file
+message.error=Error
+message.success=Success
+message.warning=Warning
+message.info=Information
+
+# Dialog
+dialog.settings.title=Settings
+dialog.settings.language=User interface language
+dialog.settings.menufile=Menu file name:
+dialog.settings.edit=Edit
+dialog.settings.download=Download
+dialog.settings.ok=OK
+dialog.settings.cancel=Cancel
+dialog.settings.apply=Apply
+dialog.settings.help=?
+
+# Settings categories
+settings.language=Language
+settings.layout=Layout
+settings.display=Display
+settings.icons=Icons
+settings.font=Font
+settings.colors=Colors
+settings.tabs=Tabs/data formats
+settings.tabs2=Tabs
+settings.customcolumns=Custom columns
+settings.viewmode=View mode
+settings.autoswitch=Auto switch mode
+settings.operations=Operations
+settings.viewereditor=Viewer/Editor
+settings.copydelete=Copy/delete
+settings.update=Update
+settings.quicksearch=Quick search
+settings.ftp=FTP
+settings.plugin=Plugin
+settings.thumbnails=Thumbnails
+settings.operationlog=Operation log
+settings.ignorelist=Ignore list
+settings.compression=Compression programs
+settings.zipcompression=ZIP compression
+settings.miscellaneous=Miscellaneous
+
